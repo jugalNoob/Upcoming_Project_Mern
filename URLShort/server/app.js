@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const  connectDB = require('./db/conn');
 const  router = require('./routes/router');
 
 const app = express();
@@ -11,6 +11,7 @@ app.use(express.json());
 // Routes
 
 app.use(router); // All other API routes
+ connectDB()
 
 // Start server
 const PORT = 5000;
